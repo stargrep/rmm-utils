@@ -22,4 +22,10 @@ use
 python -m code-scanner 
 OR
 python -m code-scanner.$file
+
+analyze
+python -v -m code-scanner 2>&1 | grep '^import'
+
+unit test
+python -m unittest tests.test_proj
 ```
