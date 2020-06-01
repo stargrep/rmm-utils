@@ -1,3 +1,3 @@
-from .hello2 import greeting
+from code_scanner.file_utils import find_all_py_in_curr
 
-greeting("what?")
+find_all_py_in_curr()

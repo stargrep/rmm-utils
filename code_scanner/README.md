@@ -1,7 +1,19 @@
 ## Project setup
 https://github.com/navdeep-G/samplemod
 
-### Running commands
+## RUN
+to build, simply go with:
+```
+make
+```
+
+to use, simply starts:
+```
+pip install dist/code_scanner-{version}.tar.gz
+```
+
+
+### Useful Commands
 ```
 $ python -m venv env
 $ source env/bin/activate
