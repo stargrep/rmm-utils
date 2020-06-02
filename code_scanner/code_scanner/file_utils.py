@@ -4,7 +4,6 @@ import os
 def find_all_py_in_curr():
     print(os.getcwd())
     find_all_with_extension(os.getcwd(), '.py')
-    find_all_with_extension(os.getcwd(), '.md')
 
 
 def find_all_with_extension(folder, ext):

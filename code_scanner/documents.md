@@ -1,5 +1,11 @@
 # Project Notes
 
+## Next Steps
+1. https://realpython.com/documenting-python-code/
+2. sphinx python
+3. https://docs.python.org/3.8/reference/index.html
+4. data model - https://docs.python.org/3.8/reference/datamodel.html
+5. https://docs.python.org/3.8/tutorial/index.html#tutorial-index
 
 ## Reference
 1. project setup
@@ -13,3 +19,8 @@ https://setuptools.readthedocs.io/en/latest/setuptools.html
 
 4. project structure info
 https://docs.python-guide.org/writing/structure/
+
+5. makefile
+https://krzysztofzuraw.com/blog/2016/makefiles-in-python-projects.html
+
+6. distribute by setup tools
