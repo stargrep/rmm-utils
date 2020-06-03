@@ -6,6 +6,8 @@
 3. https://docs.python.org/3.8/reference/index.html
 4. data model - https://docs.python.org/3.8/reference/datamodel.html
 5. https://docs.python.org/3.8/tutorial/index.html#tutorial-index
+6. use protobuf
+7. add type info for vars and return values
 
 ## Reference
 1. project setup
