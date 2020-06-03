@@ -8,6 +8,7 @@
 5. https://docs.python.org/3.8/tutorial/index.html#tutorial-index
 6. use protobuf
 7. add type info for vars and return values
+8. test pipeline https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest
 
 ## Reference
 1. project setup
