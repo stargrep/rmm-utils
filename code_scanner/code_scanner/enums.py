@@ -11,5 +11,5 @@ class FileType(enum.Enum):
     DIR_ENV = "DIR_ENV"
     DIR_CACHE = "DIR_CACHE"
     DIR_SOURCE = "DIR_SOURCE"
-    IGNORE = "IGNORE"
+    UNKNOWN = "UNKNOWN"
 

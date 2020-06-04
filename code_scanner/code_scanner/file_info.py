@@ -1,49 +1,36 @@
 from code_scanner.data_validators import validator
+from code_scanner.enums import FileType
 
 
 class FileInfo:
 
-    def __init__(self, file_type, name='', folder='', is_folder=False):
-        self._name = name
-        self._folder = folder
+    def __init__(self, full_name, file_type=FileType.UNKNOWN):
+        """
+        :param full_name:   Absolute folder without file, Path
+        :param file_type:   Enum FileType
+        """
+        self._full_name = full_name
         self._file_type = file_type
-        self._is_folder = is_folder
 
     @property
-    def name(self):
-        return self._name
-
-    @property
-    def folder(self):
-        return self._folder
+    def full_name(self):
+        return self._full_name
 
     @property
     def file_type(self):
         return self._file_type
 
-    @property
-    def is_folder(self):
-        return self._is_folder
-
-    @name.setter
-    @validator(lambda field: field is None or len(field) == 0, ValueError("name cannot be empty or "))
-    def name(self, val):
-        self._name = val
-
-    @folder.setter
-    def folder(self, val):
-        self._folder = val
+    @full_name.setter
+    @validator(lambda field: field is None or len(str(field)) == 0, ValueError("name cannot be empty or "))
+    def full_name(self, val):
+        self._full_name = val
 
     @file_type.setter
     def file_type(self, val):
         self._file_type = val
 
-    @is_folder.setter
-    def is_folder(self, val):
-        self._is_folder = val
-
     def __str__(self):
-        return self._file_type.name + "-" + self._folder + self._name
+        return self._file_type.name + "-" + str(self._full_name)
 
     def __repr__(self):
         return self.__str__()

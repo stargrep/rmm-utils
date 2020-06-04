@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pytest
 
 from code_scanner.enums import FileType
@@ -9,10 +11,7 @@ def file_info():
     """
     Returns a test python file info
     """
-    test_file_info = FileInfo(FileType.SOURCE_CODE)
-    test_file_info.name = 'test.py'
-    test_file_info.folder = '/tmp/'
-    return test_file_info
+    return FileInfo(Path('/tmp/test.py'), FileType.SOURCE_CODE)
 
 
 @pytest.fixture
@@ -20,14 +19,11 @@ def another_file_info():
     """
     Returns another test python file info
     """
-    test_file_info = FileInfo(FileType.SOURCE_CODE)
-    test_file_info.name = 'test.py'
-    test_file_info.folder = '/tmp/'
-    return test_file_info
+    return FileInfo(Path('/tmp/test.py'), FileType.SOURCE_CODE)
 
 
 def test_file_info_funcs(file_info, another_file_info):
-    assert file_info.name == 'test.py'
+    assert file_info.full_name == Path('/tmp/test.py')
     assert str(file_info) == 'SOURCE_CODE-/tmp/test.py'
 
     assert file_info == another_file_info
@@ -43,9 +39,9 @@ def test_file_info_funcs(file_info, another_file_info):
 
 
 @pytest.mark.parametrize("updated_name,expected_full_name", [
-    ('new.py', 'SOURCE_CODE-/tmp/new.py'),
-    ('tests.py', 'SOURCE_CODE-/tmp/tests.py')
+    ('/tmp/new.py', 'SOURCE_CODE-/tmp/new.py'),
+    ('/tmp/tests.py', 'SOURCE_CODE-/tmp/tests.py')
 ])
 def test_update_file_name(file_info, updated_name, expected_full_name):
-    file_info.name = updated_name
+    file_info.full_name = updated_name
     assert str(file_info) == expected_full_name
