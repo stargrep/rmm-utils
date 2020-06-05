@@ -9,6 +9,7 @@
 6. use protobuf
 7. add type info for vars and return values
 8. test pipeline https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest
+9. profiler: https://github.com/jiffyclub/snakeviz/
 
 ## Reference
 1. project setup
