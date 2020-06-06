@@ -2,7 +2,7 @@ from pathlib import Path
 import pytest
 
 from code_scanner.file_utils import retrieve_folders, retrieve_files
-from code_scanner.filter_utils import PythonFolderFilter, GeneralFileFilter
+from code_scanner.filter_utils import PythonFolderFilter, GeneralFileFilter, PythonSourceFileFilter
 
 
 @pytest.fixture
@@ -24,6 +24,10 @@ def test_retrieve_folders(current_folder):
 
 def test_retrieve_files(current_folder):
     folders = retrieve_folders(current_folder, [PythonFolderFilter()])
+    files = retrieve_files(folders, [PythonSourceFileFilter()])
+    print("Python files--", files, folders)
+    assert len(files) == 12
+
     files = retrieve_files(folders, [GeneralFileFilter()])
-    print(files)
-    assert len(files) == 15
+    print("Files ---", files)
+    assert len(files) == 16
