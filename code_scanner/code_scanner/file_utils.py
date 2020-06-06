@@ -5,8 +5,8 @@ from code_scanner.file_info import FileInfo
 from code_scanner.filter_utils import IFileFilter
 
 
-def retrieve_folders(root: Path, folder_filters: [IFileFilter], include_root: bool = True) -> [FileInfo]:
-    filtered = reduce(lambda prev, f: f.filter(prev), folder_filters, list(root.glob("*")))
+def retrieve_folders(root: Path, filters: [IFileFilter], include_root: bool = True) -> [FileInfo]:
+    filtered = reduce(lambda prev, f: f.filter(prev), filters, list(root.glob("*")))
     filtered = list(map(convert, filtered))
 
     if include_root:
@@ -14,6 +14,12 @@ def retrieve_folders(root: Path, folder_filters: [IFileFilter], include_root: bo
         return filtered
 
     return filtered
+
+
+def retrieve_files(folders: [FileInfo], filters: [IFileFilter]) -> [FileInfo]:
+    all_files = reduce(lambda prev, folder: prev + list(folder.full_name.glob("*")), folders, [])
+    filtered = reduce(lambda prev, f: f.filter(prev), filters, all_files)
+    return list(map(convert, filtered))
 
 
 def convert(path: Path) -> FileInfo:

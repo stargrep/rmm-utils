@@ -1,8 +1,8 @@
 from pathlib import Path
 import pytest
 
-from code_scanner.file_utils import retrieve_folders
-from code_scanner.filter_utils import PythonFolderFilter
+from code_scanner.file_utils import retrieve_folders, retrieve_files
+from code_scanner.filter_utils import PythonFolderFilter, GeneralFileFilter
 
 
 @pytest.fixture
@@ -21,3 +21,9 @@ def test_retrieve_folders(current_folder):
     folders = retrieve_folders(current_folder, [PythonFolderFilter()], include_root=False)
     assert len(folders) == 1
 
+
+def test_retrieve_files(current_folder):
+    folders = retrieve_folders(current_folder, [PythonFolderFilter()])
+    files = retrieve_files(folders, [GeneralFileFilter()])
+    print(files)
+    assert len(files) == 15
