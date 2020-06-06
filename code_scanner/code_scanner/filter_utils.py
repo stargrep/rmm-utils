@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
 from pathlib import Path
-from typing import Tuple
 
 from code_scanner.const import IGNORED_FOLDER_START_PATTERN, IGNORED_FILE_START_PATTERN
 
@@ -18,7 +17,7 @@ class IFileFilter(metaclass=ABCMeta):
         """Check if a path is valid"""
         raise NotImplementedError
 
-    def filter(self, paths: [Path]) -> Tuple[Path, ...]:
+    def filter(self, paths: [Path]) -> [Path]:
         """Filter function for path obj"""
         return tuple(filter(self.valid, paths))
 

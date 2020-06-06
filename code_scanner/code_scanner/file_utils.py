@@ -1,27 +1,27 @@
+from functools import reduce
 from pathlib import Path
+from code_scanner.enums import FileType
+from code_scanner.file_info import FileInfo
+from code_scanner.filter_utils import IFileFilter
 
 
-# def find_all_py_in_curr():
-#     print(os.getcwd())
-#     find_all_with_extension(os.getcwd(), '.py')
-#
-#
-# def find_all_with_extension(folder, ext):
-#     for file in os.listdir(folder):
-#         if file.endswith(ext):
-#             print(os.path.join(folder, file))
+def retrieve_folders(root: Path, folder_filters: [IFileFilter], include_root: bool = True) -> [FileInfo]:
+    filtered = reduce(lambda prev, f: f.filter(prev), folder_filters, list(root.glob("*")))
+    filtered = list(map(convert, filtered))
+
+    if include_root:
+        filtered.append(convert(root))
+        return filtered
+
+    return filtered
 
 
-def retrieve_folders():
-    pass
-    # if recursive and
-
-def is_file():
-    x = Path(__file__).resolve().glob()
-    print("!", )
-
-
-is_file()
+def convert(path: Path) -> FileInfo:
+    if path.is_file():
+        return FileInfo(path, FileType.SOURCE_CODE)
+    elif path.is_dir():
+        return FileInfo(path, FileType.DIR_SOURCE)
+    return FileInfo(path)
 
 
 
