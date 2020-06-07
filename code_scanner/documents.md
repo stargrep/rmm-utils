@@ -2,6 +2,7 @@
 
 ## Next Steps
 1. https://realpython.com/documenting-python-code/
+https://pythontesting.net/framework/pytest/pytest-introduction/
 2. sphinx python
 3. https://docs.python.org/3.8/reference/index.html
 4. data model - https://docs.python.org/3.8/reference/datamodel.html
@@ -10,6 +11,7 @@
 7. add type info for vars and return values
 8. test pipeline https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest
 9. profiler: https://github.com/jiffyclub/snakeviz/
+10. https://docs.python-guide.org/dev/virtualenvs/#virtualenvwrapper
 
 ## Reference
 1. project setup
@@ -28,3 +30,10 @@ https://docs.python-guide.org/writing/structure/
 https://krzysztofzuraw.com/blog/2016/makefiles-in-python-projects.html
 
 6. distribute by setup tools
+
+7. https://docs.python.org/3.8/reference/index.html
+Data Model:
+https://docs.python.org/3.8/reference/datamodel.html
+
+8 Type and Object relations:
+https://www.eecg.utoronto.ca/~jzhu/csc326/readings/metaclass-class-instance.pdf
