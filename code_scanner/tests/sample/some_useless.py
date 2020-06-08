@@ -13,3 +13,5 @@ def multiline_example():
     This is another type of triple-single quote comments
     blah blah blah
     '''
+    """This is a test comment"""
+    ''' This is also a test comment'''
