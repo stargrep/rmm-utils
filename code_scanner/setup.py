@@ -26,7 +26,7 @@ with open('README.md') as f:
 
 setup(
     name='code_scanner',
-    version='0.1.3',
+    version='0.1.4',
     description='Code Scanner for local run',
     long_description=readme,
     author='mike',

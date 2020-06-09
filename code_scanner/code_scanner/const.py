@@ -1,4 +1,4 @@
-IGNORED_FOLDER_START_PATTERN = (".", "env", "tests")
+IGNORED_FOLDER_START_PATTERN = (".", "env", "tests", "__")
 IGNORED_FILE_START_PATTERN = (".", "license")
 
 CONFIG_SUFFIX = (".json", ".yaml", ".config")
