@@ -30,8 +30,7 @@ class GeneralFolderFilter(IFileFilter):
         :param path:
         :return:
         """
-        return path.is_dir() and \
-               not path.name.startswith(IGNORED_FOLDER_START_PATTERN)
+        return path.is_dir() and not path.name.startswith(IGNORED_FOLDER_START_PATTERN)
 
 
 class PythonFolderFilter(GeneralFolderFilter):
@@ -85,4 +84,3 @@ class PythonSourceLineFilter(ILineFilter):
             return False
         # add the multi line logic
         return True
-
