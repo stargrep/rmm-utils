@@ -6,3 +6,5 @@ DOCUMENT_SUFFIX = (".json", ".md", ".txt")
 PYTHON_SOURCE_SUFFIX = (".py", ".c", ".sql")
 JAVA_SOURCE_SUFFIX = (".java", ".sql")
 
+OUTCOME_TEMPLATE = "tmp/outcome_template.txt"
+DEFAULT_OUTCOME_PATH = ".__scanned_result.txt"

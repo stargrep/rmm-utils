@@ -1,0 +1,10 @@
+
+------------------------------ start
+{{current_time}}
+{{current_path}}
+{{filtered_total_lines}}
+{{total_lines}}
+
+Total Pure Code - {{filtered_total_lines}} Lines
+Total Code - {{total_lines}} Lines
+------------------------------ end
