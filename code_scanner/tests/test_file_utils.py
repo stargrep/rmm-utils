@@ -14,12 +14,11 @@ def test_retrieve_folders(current_folder):
     folders = retrieve_all_folders(current_folder, [PythonFolderFilter()])
     print(current_folder)
     print(folders)
-    assert len(folders) == 2
+    assert len(folders) == 3
     assert folders[0].full_name.name == 'code_scanner'
-    assert folders[1].full_name.name == 'code_scanner'
 
     folders = retrieve_all_folders(current_folder, [PythonFolderFilter()], include_root=False)
-    assert len(folders) == 1
+    assert len(folders) == 2
 
 
 def test_retrieve_files(current_folder):
@@ -30,4 +29,4 @@ def test_retrieve_files(current_folder):
 
     files = retrieve_files(folders, [GeneralFileFilter()])
     print("Files ---", files)
-    assert len(files) == 16
+    assert len(files) == 17

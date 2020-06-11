@@ -38,3 +38,12 @@ python -v -m code_scanner 2>&1 | grep '^import'
 unit test
 pytest --fixtures # find all fixture info
 ```
+
+### Report
+```
+# get all lines of code
+git ls-files | xargs wc -l
+
+# code-scanner output
+
+```

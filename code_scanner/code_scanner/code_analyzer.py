@@ -1,15 +1,24 @@
+from pathlib import Path
+
 from code_scanner.analysis_result import AnalysisResult, AnalyzedFile
 from code_scanner.file_info import FileInfo
 from code_scanner.filter_utils import PythonSourceLineFilter
 
 
-def python_code_counter(files: [FileInfo]) -> AnalysisResult:
+def python_code_counter(root: Path, files: [FileInfo]) -> AnalysisResult:
     filtered_files: [AnalyzedFile] = []
     for file in files:
-        lines = remove_comments(PythonSourceLineFilter().filter(file.full_name.read_text().split("\n")))
-        filtered_files.append(AnalyzedFile(file.full_name, lines, len(lines)))
+        original_lines = PythonSourceLineFilter().filter(file.full_name.read_text().split("\n"))
+        lines = remove_comments(original_lines)
+        filtered_files.append(AnalyzedFile(file.full_name, original_lines, lines))
 
-    return AnalysisResult(filtered_files, sum(map(lambda f: f.line_num, filtered_files)))
+    return AnalysisResult(filtered_files, root,
+                          line_num_sum(filtered_files, "original"),
+                          line_num_sum(filtered_files, "filtered"))
+
+
+def line_num_sum(analyzed_files: [AnalyzedFile], field_name: str) -> int:
+    return sum(map(lambda f: len(getattr(f, field_name)), analyzed_files))
 
 
 def remove_comments(lines: [str]) -> [str]:
