@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from code_scanner.filter_utils import GeneralFileFilter, GeneralFolderFilter, IFileFilter, PythonFolderFilter
+from code_scanner.filter_utils import GeneralFileFilter, GeneralFolderFilter, IFileFilter, SourceCodeFolderFilter
 
 
 @pytest.fixture
@@ -16,8 +16,8 @@ def general_folder_filter() -> GeneralFolderFilter:
 
 
 @pytest.fixture
-def python_folder_filter() -> PythonFolderFilter:
-    return PythonFolderFilter()
+def python_folder_filter() -> SourceCodeFolderFilter:
+    return SourceCodeFolderFilter()
 
 
 @pytest.fixture
@@ -38,12 +38,12 @@ def test_sub_class(general_file_filter: GeneralFileFilter,
     # ((<class 'code_scanner.filter_utils.GeneralFileFilter'>, <class 'code_scanner.filter_utils.IFileFilter'>,
     # <class 'object'>
     assert len(python_folder_filter.__class__.__mro__) == 4
-    assert tuple(list(PythonFolderFilter.__mro__)[1:]) == GeneralFolderFilter.__mro__
+    assert tuple(list(SourceCodeFolderFilter.__mro__)[1:]) == GeneralFolderFilter.__mro__
 
 
 def test_python_folder(current_folder: Path,
                        general_folder_filter: GeneralFolderFilter,
-                       python_folder_filter: PythonFolderFilter) -> None:
+                       python_folder_filter: SourceCodeFolderFilter) -> None:
     assert general_folder_filter.valid(current_folder)
     assert not general_folder_filter.valid(current_folder.joinpath("env"))
     assert len(python_folder_filter.filter([current_folder])) == 1

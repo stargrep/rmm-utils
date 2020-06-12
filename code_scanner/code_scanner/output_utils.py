@@ -1,13 +1,14 @@
-from datetime import datetime
 from pathlib import Path
 
-from code_scanner.analysis_result import AnalysisResult
+from code_scanner.analysis_result import AnalysisResult, TemplateModel
 from jinja2 import Template
 
 from code_scanner.const import DEFAULT_OUTCOME_PATH
 
 
-def output_to_file(result: AnalysisResult, template_path_str: str,
+def output_to_file(src_result: AnalysisResult,
+                   result: AnalysisResult,
+                   template_str: str,
                    outcome_path: Path = None) -> None:
     if outcome_path is None:
         outcome_path = result.root.joinpath(Path(DEFAULT_OUTCOME_PATH))
@@ -17,17 +18,11 @@ def output_to_file(result: AnalysisResult, template_path_str: str,
     else:
         old_content = ""
 
-    with open(outcome_path, "w+") as f:
-        tm = Template(Path(__file__).parent.joinpath(template_path_str).read_text())
-        f.write(render_result(result, tm) + old_content)
+    with open(str(outcome_path), "w+") as f:
+        tm = Template(template_str)
+        f.write(render_results(src_result, result, tm) + old_content)
 
 
-def render_result(result: AnalysisResult, tm: Template) -> str:
-    model = {
-        "current_time": datetime.now(),
-        "current_path": result.root,
-        "filtered_total_lines": result.total_filtered_count,
-        "total_lines": result.total_count
-    }
-    return tm.render(model)
+def render_results(src_result: AnalysisResult, result: AnalysisResult, tm: Template) -> str:
+    return tm.render(TemplateModel(src_result, result).to_dict())
 

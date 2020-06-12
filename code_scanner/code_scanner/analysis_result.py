@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 
 
@@ -61,7 +62,7 @@ class AnalysisResult:
         return self._files
 
     @property
-    def root(self):
+    def root(self) -> Path:
         return self._root
 
     @property
@@ -102,3 +103,25 @@ class AnalysisResult:
                 self.__class__ == other.__class__ and
                 self.__str__() == other.__str__()
         )
+
+
+class TemplateModel:
+    """
+        _current_time
+        _root
+        _total_lines
+        _logic_total_lines
+        _total_lines_no_tests
+        _logic_total_lines_no_tests
+    """
+
+    def __init__(self, src_result: AnalysisResult, all_result: AnalysisResult):
+        self.current_time = datetime.now()
+        self.root = src_result.root
+        self.total_lines = all_result.total_count
+        self.logic_lines = all_result.total_filtered_count
+        self.src_total_lines = src_result.total_count
+        self.src_logic_lines = src_result.total_filtered_count
+
+    def to_dict(self):
+        return vars(self)

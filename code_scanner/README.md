@@ -47,3 +47,28 @@ git ls-files | xargs wc -l
 # code-scanner output
 
 ```
+
+### Sample Output 
+``` v0.2.0
+
+$python -m code_scanner
+
+$pwd 
+can find the folder and .__scanned_result.txt
+
+in .__scanned_result.txt
+
+------------------------------------
+------------------------------ start
+Python Source Files
+
+2020-06-12 17:22:43.459211
+
+Source Lines (w/o Comments): 402 (251) Lines 62.0%
+Total Lines (w/o Comments): 638 (383) Lines 60.0% 
+
+Non-tests Ratio (w/o Comments): 63.0% (65.0%)
+------------------------------ end
+------------------------------------
+
+```
