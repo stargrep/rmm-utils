@@ -14,11 +14,11 @@ def test_retrieve_folders(current_folder):
     folders = retrieve_all_folders(current_folder, [SourceCodeFolderFilter()])
     print(current_folder)
     print(folders)
-    assert len(folders) == 4
+    assert len(folders) == 2
     assert folders[0].full_name.name == 'code_scanner'
 
     folders = retrieve_all_folders(current_folder, [SourceCodeFolderFilter()], include_root=False)
-    assert len(folders) == 3
+    assert len(folders) == 1
 
 
 def test_retrieve_files(current_folder):
@@ -29,4 +29,4 @@ def test_retrieve_files(current_folder):
 
     files = retrieve_files(folders, [GeneralFileFilter()])
     print("Files ---", files)
-    assert len(files) == 21
+    assert len(files) == 16

@@ -8,7 +8,7 @@ from code_scanner.const import DEFAULT_OUTCOME_PATH
 
 def output_to_file(src_result: AnalysisResult,
                    result: AnalysisResult,
-                   template_path_str: str,
+                   template_str: str,
                    outcome_path: Path = None) -> None:
     if outcome_path is None:
         outcome_path = result.root.joinpath(Path(DEFAULT_OUTCOME_PATH))
@@ -18,8 +18,8 @@ def output_to_file(src_result: AnalysisResult,
     else:
         old_content = ""
 
-    with open(outcome_path.name, "w+") as f:
-        tm = Template(Path(__file__).parent.joinpath(template_path_str).read_text())
+    with open(str(outcome_path), "w+") as f:
+        tm = Template(template_str)
         f.write(render_results(src_result, result, tm) + old_content)
 
 
