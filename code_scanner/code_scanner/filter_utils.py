@@ -1,7 +1,8 @@
 from abc import ABCMeta, abstractmethod
 from pathlib import Path
 
-from code_scanner.const import IGNORED_FOLDER_START_PATTERN, IGNORED_FILE_START_PATTERN, PYTHON_SOURCE_SUFFIX
+from code_scanner.const import IGNORED_FOLDER_START_PATTERN, IGNORED_FILE_START_PATTERN, PYTHON_SOURCE_SUFFIX, \
+    TEST_FOLDER_START_PATTERN
 
 
 class IFileFilter(metaclass=ABCMeta):
@@ -33,11 +34,11 @@ class GeneralFolderFilter(IFileFilter):
         return path.is_dir() and not path.name.startswith(IGNORED_FOLDER_START_PATTERN)
 
 
-class PythonFolderFilter(GeneralFolderFilter):
+class SourceCodeFolderFilter(GeneralFolderFilter):
 
     def valid(self, path: Path) -> bool:
         paths = list(path.glob("*"))
-        if not super().valid(path) or len(paths) == 0:
+        if not super().valid(path) or len(paths) == 0 or path.name.startswith(TEST_FOLDER_START_PATTERN):
             return False
         return True
 

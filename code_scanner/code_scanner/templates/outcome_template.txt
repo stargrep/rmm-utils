@@ -1,10 +1,12 @@
 
+------------------------------------
 ------------------------------ start
 {{current_time}}
 {{current_path}}
-{{filtered_total_lines}}
-{{total_lines}}
+Source Lines (Without Comments): {{src_total_lines}} ({{src_logic_lines}}) Lines
+Total Lines (Without Comments): {{total_lines}} ({{logic_lines}}) Lines
 
-Total Pure Code - {{filtered_total_lines}} Lines
-Total Code - {{total_lines}} Lines
+Logic Code Ratio - Source/Total (Without Comments): {{src_total_lines / total_lines * 100 // 1}}% ({{src_logic_lines / logic_lines * 100 // 1}}%)
 ------------------------------ end
+------------------------------------
+

@@ -13,6 +13,10 @@ https://pythontesting.net/framework/pytest/pytest-introduction/
 9. profiler: https://github.com/jiffyclub/snakeviz/
 10. https://docs.python-guide.org/dev/virtualenvs/#virtualenvwrapper
 
+11. check why file not generated
+12. different programming language
+13. multi-thread / pub-sub
+
 ## Reference
 1. project setup
 https://stackoverflow.com/questions/43393764/python-3-6-project-structure-leads-to-runtimewarning/45070583#45070583
