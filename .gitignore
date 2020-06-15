@@ -133,6 +133,3 @@ dmypy.json
 .idea/
 .DS_Store
 */.DS_Store
-
-# code-scanner file
-.__*
