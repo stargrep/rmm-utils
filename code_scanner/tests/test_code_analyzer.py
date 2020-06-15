@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import pytest
 
 from code_scanner.code_analyzer import python_code_counter
@@ -7,18 +5,12 @@ from code_scanner.file_info import FileInfo
 
 
 @pytest.fixture
-def root_path() -> Path:
-    return Path(__file__).parent.joinpath("sample")
-
-
-@pytest.fixture
-def sample_file_infos(root_path: Path) -> [FileInfo]:
-    paths = list(root_path.glob("*.py"))
+def sample_file_infos(sample_test_folder) -> [FileInfo]:
+    paths = list(sample_test_folder.glob("*.py"))
     return list(map(lambda p: FileInfo(p), list(paths)))
 
 
-def test_python_code_counter(root_path: Path, sample_file_infos: [FileInfo]):
-    result = python_code_counter(root_path, sample_file_infos)
-    # print(result.files[0].filtered)
+def test_python_code_counter(sample_test_folder, sample_file_infos: [FileInfo]):
+    result = python_code_counter(sample_test_folder, sample_file_infos)
     assert result.total_filtered_count == 49
     assert result.total_count == 118

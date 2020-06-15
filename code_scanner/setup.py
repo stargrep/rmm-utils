@@ -1,23 +1,6 @@
-# from distutils.core import setup
-#
-# setup(
-#     name='code_scanner',
-#     packages=['code_scanner'],
-#     version='1.0.1',
-#     description='detector for essential code changes, generate a report after analysis',
-#     author='wanzih',
-#     author_email='..',
-#     url='..',
-#     data_files=[
-#         ('doc', ['documents.md']),
-#     ],
-# )
-
 # -*- coding: utf-8 -*-
 
 # Learn more: https://github.com/kennethreitz/setup.py
-from glob import glob
-
 from setuptools import setup, find_packages
 
 with open('LICENSE') as f:
@@ -28,12 +11,12 @@ with open('README.md') as f:
 
 setup(
     name='code_scanner',
-    version='0.2.0',
+    version='0.2.1',
     description='Code Scanner for local run',
     long_description=readme,
     author='mike',
-    author_email='..',
-    url='https://github.com/',
+    author_email='mikenyc1207@gmail.com',
+    url='https://github.com/stargrep/rmm-utils/tree/master/code_scanner',
     license=lis,
     packages=find_packages(exclude=('tests', 'docs')),
     data_files=[
