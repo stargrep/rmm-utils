@@ -2,6 +2,8 @@
 
 # Learn more: https://github.com/kennethreitz/setup.py
 from setuptools import setup, find_packages
+from code_scanner.const import APP_VERSION
+
 
 with open('LICENSE') as f:
     lis = f.read()
@@ -11,7 +13,7 @@ with open('README.md') as f:
 
 setup(
     name='code_scanner',
-    version='0.2.1',
+    version=APP_VERSION,
     description='Code Scanner for local run',
     long_description=readme,
     author='mike',

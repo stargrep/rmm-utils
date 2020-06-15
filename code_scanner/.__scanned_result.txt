@@ -1,5 +1,81 @@
 
 
+--------------------------------------------------
+-------------- start with code_scanner -----------
+v0.2.2
+2020-06-15 13:39:42.826504
+
+Total Files #: 26
+Python Source Files #: 12
+
+Source Lines (w/o Comments): 397 (256) Lines 64.0%
+Total Lines (w/o Comments): 667 (417) Lines 62.0% 
+
+Non-tests Ratio (w/o Comments): 59.0% (61.0%)
+--------------------- end ------------------------
+--------------------------------------------------
+
+
+--------------------------------------------------
+---- start with code_scanner v0.2.2 ----
+2020-06-15 13:38:52.276925
+
+Total Files #: 26
+Python Source Files #: 12
+
+Source Lines (w/o Comments): 396 (255) Lines 64.0%
+Total Lines (w/o Comments): 666 (416) Lines 62.0% 
+
+Non-tests Ratio (w/o Comments): 59.0% (61.0%)
+--------------------- end ------------------------
+--------------------------------------------------
+
+
+--------------------------------------------------
+---- start with app version : 0.2.2 ----
+2020-06-15 13:38:21.195159
+
+Total Files #: 26
+Python Source Files #: 12
+
+Source Lines (w/o Comments): 396 (255) Lines 64.0%
+Total Lines (w/o Comments): 666 (416) Lines 62.0% 
+
+Non-tests Ratio (w/o Comments): 59.0% (61.0%)
+--------------------- end ------------------------
+--------------------------------------------------
+
+
+------------------------------------
+------------------------------ start
+2020-06-15 13:34:01.572498
+
+Total Files #: 26
+Python Source Files #: 12
+
+Source Lines (w/o Comments): 392 (252) Lines 64.0%
+Total Lines (w/o Comments): 662 (413) Lines 62.0% 
+
+Non-tests Ratio (w/o Comments): 59.0% (61.0%)
+------------------------------ end
+------------------------------------
+
+
+------------------------------------
+------------------------------ start
+Total Files #: 26
+Python Source Files #: 12
+
+2020-06-15 13:32:10.650394
+
+Source Lines (w/o Comments): 393 (253) Lines 64.0%
+Total Lines (w/o Comments): 663 (414) Lines 62.0% 
+
+Non-tests Ratio (w/o Comments): 59.0% (61.0%)
+------------------------------ end
+------------------------------------
+
+
 ------------------------------------
 ------------------------------ start
 Python Source Files

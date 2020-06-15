@@ -1,6 +1,8 @@
 from datetime import datetime
 from pathlib import Path
 
+from code_scanner.const import APP_VERSION
+
 
 class AnalyzedFile:
     def __init__(self, path: Path, original: [str], filtered: [str]):
@@ -118,10 +120,13 @@ class TemplateModel:
     def __init__(self, src_result: AnalysisResult, all_result: AnalysisResult):
         self.current_time = datetime.now()
         self.root = src_result.root
+        self.python_files = len(src_result.files)
+        self.total_files = len(all_result.files)
         self.total_lines = all_result.total_count
         self.logic_lines = all_result.total_filtered_count
         self.src_total_lines = src_result.total_count
         self.src_logic_lines = src_result.total_filtered_count
+        self.app_version = APP_VERSION
 
     def to_dict(self):
         return vars(self)
