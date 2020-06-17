@@ -133,3 +133,9 @@ dmypy.json
 .idea/
 .DS_Store
 */.DS_Store
+
+# sphinx
+*/_build/
+*/_static/
+*/_templates/
+

@@ -2,6 +2,22 @@
 
 --------------------------------------------------
 -------------- start with code_scanner -----------
+v0.2.3
+2020-06-17 00:07:34.718053
+
+Total Files #: 27
+Python Source Files #: 13
+
+Source Lines (w/o Comments): 438 (267) Lines 60.0%
+Total Lines (w/o Comments): 708 (428) Lines 60.0% 
+
+Non-tests Ratio (w/o Comments): 61.0% (62.0%)
+--------------------- end ------------------------
+--------------------------------------------------
+
+
+--------------------------------------------------
+-------------- start with code_scanner -----------
 v0.2.2
 2020-06-15 13:39:42.826504
 
@@ -55,21 +71,6 @@ Python Source Files #: 12
 
 Source Lines (w/o Comments): 392 (252) Lines 64.0%
 Total Lines (w/o Comments): 662 (413) Lines 62.0% 
-
-Non-tests Ratio (w/o Comments): 59.0% (61.0%)
------------------------------- end
-------------------------------------
-
-
-------------------------------------
------------------------------- start
-Total Files #: 26
-Python Source Files #: 12
-
-2020-06-15 13:32:10.650394
-
-Source Lines (w/o Comments): 393 (253) Lines 64.0%
-Total Lines (w/o Comments): 663 (414) Lines 62.0% 
 
 Non-tests Ratio (w/o Comments): 59.0% (61.0%)
 ------------------------------ end

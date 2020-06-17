@@ -1,7 +1,7 @@
 from pathlib import Path
-APP_VERSION = '0.2.2'
+APP_VERSION = '0.2.3'
 
-IGNORED_FOLDER_START_PATTERN = (".", "env", "__", "dist", "build")
+IGNORED_FOLDER_START_PATTERN = (".", "env", "_", "__", "dist", "build")
 TEST_FOLDER_START_PATTERN = ("tests")
 IGNORED_FILE_START_PATTERN = (".", "license")
 

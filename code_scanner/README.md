@@ -72,3 +72,4 @@ Non-tests Ratio (w/o Comments): 63.0% (65.0%)
 ------------------------------------
 
 ```
+Removed _build/, _static/ and _templates/ as they can be generated using 'make'.

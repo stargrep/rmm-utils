@@ -25,8 +25,8 @@ def test_retrieve_files(current_folder):
     folders = retrieve_all_folders(current_folder, [SourceCodeFolderFilter()])
     files = retrieve_files(folders, [PythonSourceFileFilter()])
     print("Python files--", files, folders)
-    assert len(files) == 12
+    assert len(files) == 13
 
     files = retrieve_files(folders, [GeneralFileFilter()])
     print("Files ---", files)
-    assert len(files) == 16
+    assert len(files) == 19

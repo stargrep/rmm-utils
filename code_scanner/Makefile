@@ -1,8 +1,18 @@
-TEST_PATH=tests
-TEST_PY_FILES=$(TEST_PATH)/*.py
+# Minimal makefile for Sphinx documentation
+#
 
-.PHONY: run-all
-run-all: clean test
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = .
+BUILDDIR      = _build
+TEST_PATH	  = tests
+TEST_PY_FILES = $(TEST_PATH)/*.py
+
+# Put it first so that "make" without argument is like "make help".
+help:
+	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 clean:
 	rm -rf build/
@@ -27,3 +37,10 @@ install: build
 	pip install dist/code_scanner-*.tar.gz
 	python -m code_scanner
 	@echo "main function of code_scanner executed"
+
+.PHONY: install help Makefile
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
