@@ -39,5 +39,7 @@ https://krzysztofzuraw.com/blog/2016/makefiles-in-python-projects.html
 Data Model:
 https://docs.python.org/3.8/reference/datamodel.html
 
-8 Type and Object relations:
+8. Type and Object relations:
 https://www.eecg.utoronto.ca/~jzhu/csc326/readings/metaclass-class-instance.pdf
+
+9. https://www.jetbrains.com/help/pycharm/restructured-text.html

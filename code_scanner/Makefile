@@ -14,11 +14,18 @@ TEST_PY_FILES = $(TEST_PATH)/*.py
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+doc-clean:
+	rm -rf _build/
+	rm -rf _static/
+	rm -rf _templates/
+	@echo "cleaned _build, _static and _templates folders"
+
 clean:
 	rm -rf build/
-	rm -rf dist
-	rm -rf *.egg-info
-	@echo "cleaned build/, dist/ and egg-info/ folders"
+	rm -rf dist/
+	rm -rf *.egg-info/
+	rm -rf .pytest_cache/
+	@echo "cleaned build/, dist/, egg-info/ and .pytest_cache/ folders"
 
 test: clean
 	@echo "Start py.test task"
@@ -28,13 +35,13 @@ test: clean
 build: clean test
 	@echo "create shippable version"
 	. env/bin/activate
-	python setup.py sdist
+	python setup.py sdist bdist_wheel
 	@echo "sdist done"
 
 install: build
 	@echo "calling the main function"
 	. env/bin/activate
-	pip install dist/code_scanner-*.tar.gz
+	pip install dist/code_scanner-*-py3-none-any.whl
 	python -m code_scanner
 	@echo "main function of code_scanner executed"
 

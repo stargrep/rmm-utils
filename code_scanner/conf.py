@@ -16,9 +16,9 @@
 
 
 # -- Project information -----------------------------------------------------
-from code_scanner.const import APP_VERSION
+from code_scanner.const import APP_VERSION, APP_TITLE
 
-project = 'code_scanner'
+project = APP_TITLE
 copyright = '2020, zw'
 author = 'zw'
 

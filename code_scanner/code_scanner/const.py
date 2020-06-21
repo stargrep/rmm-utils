@@ -1,5 +1,7 @@
 from pathlib import Path
-APP_VERSION = '0.2.3'
+APP_VERSION = "0.2.4"
+APP_NAME = "code-scanner"
+APP_TITLE = "SCANNER"
 
 IGNORED_FOLDER_START_PATTERN = (".", "env", "_", "__", "dist", "build")
 TEST_FOLDER_START_PATTERN = ("tests")
